@@ -16,7 +16,7 @@ Best suited for: Douyin content creators, short-video directors, people producin
 - **Smart draft-model routing**: emotional stories / warm branding / hot topics / challenges / documentary-style → Doubao 2.0 Pro; knowledge / cultural interpretation → DeepSeek V4 Pro; Doubao as fallback when the genre is unclear. Based on a head-to-head model benchmark dated 2026-07-23 (opening hook / internet fluency / emotion / logic / stability).
 - **HOOK-X hook matrix + six story structures**: pick 1 primary + 1 backup from 8 hook types (conflict / suspense / counterintuitive / resonance / data shock / identity immersion / contrast / time pressure); six structure templates including ledger-style truth reveal, role swap, emotional container, time-travel narrative, challenge narrative, and raw documentary.
 - **Three embedded pre-checks**: Stage 2 "re-review survival pre-check" (conflict must resolve positively; never monetize a specific group's pain) and "dramatic action pre-check" (every scene must be writable as "X wants [goal], but [obstacle]"); Stage 3 "subtext pre-check" (never state emotions outright, never write what can't be filmed, cut all preaching) — methodology adapted from @Shanyin's screenwriting/directing masterclass (MIT license).
-- **300-point scoring + iterative optimization**: four scoring dimensions (content quality / algorithm fit / originality / challenge-specific), 240 points to qualify for polishing, max 5 iteration rounds with full detail shown each round.
+- **Dual-track scoring + iterative optimization**: standard track 300 points (content quality / algorithm fit / originality), challenge track 400 points (adds a fourth dimension, "challenge-specific"); pass lines are 240 / 320, max 5 iteration rounds with full detail shown each round.
 - **Dual anti-mediocrity gates**: Stage 4 Gate 1 (no interchangeable sentences, a memory anchor in the first 5 seconds, a screenshot-worthy closing line, no filler paragraphs, recognizable persona); Stage 7 Gate 2 (irreplaceability, a "holy cow" moment, thumb-stopping first 3 seconds, no redundant buildup, precise search-keyword targeting).
 - **Gemini polish (Stage 6)**: six-dimension structural diagnosis (logic chain / redundancy / support / opening / ending / pacing) + four writing-polish principles (be concrete / weight the focus / talk like a human / restrained formatting); the Claude family is explicitly banned from polishing.
 - **Complete delivery package (Stage 7)**: 3 title options with a recommendation, tags, BGM, cover design, view-count estimate, engagement guidance, posting-time advice (aligned with the interest clock), and a comment-section operations plan (3-5 seeded comments, each paired with author reply scripts, aligned with the official handshake model).
@@ -69,8 +69,8 @@ Stage 1   Topic analysis + Brief + primary behavior signal + model routing
 Stage 2   HOOK-X hooks + story structure + storyboard outline
           (re-review survival pre-check + dramatic action pre-check)
 Stage 3   Draft filling + 9 virality elements + compliance review (subtext pre-check)
-Stage 4   10-item self-check + 300-point scoring + Anti-Mediocrity Gate 1
-Stage 5   Iterative optimization (max 5 rounds, 240 points to pass)
+Stage 4   10-item self-check + dual-track scoring (300 standard / 400 challenge) + Anti-Mediocrity Gate 1
+Stage 5   Iterative optimization (max 5 rounds, 240 / 320 points to pass)
 
 [Switch → Gemini 3.6 Flash]
 Stage 6   Polish (six-dimension diagnosis + four principles)
@@ -92,12 +92,12 @@ douyin-script-pro/
 ├── README.md                       # Detailed Chinese README
 ├── README_EN.md                    # This file (detailed English README)
 └── references/                     # Lazy-loaded modules, kept out of the standing context
-    ├── 00-模型接力提示词.md         # Model-relay prompt pack templates (v5.2)
+    ├── 00-模型接力提示词.md         # Model-relay prompt pack + return validation + single-model fallback (v5.3)
     ├── 08-分场视觉锚定.md           # Stage 8 module
     ├── 09-角色表演档案.md           # Stage 9 module
     ├── 10-图像资产提示词.md         # Stage 10 module
+    ├── 10.5-镜头设计.md             # Stage 10.5 module (551-shot duration database)
     ├── 11-视频提示词.md             # Stage 11 module
-    ├── 12-镜头设计.md               # Stage 10.5 module (551-shot duration database)
     └── 更新日志.md                  # Full changelog since v3.0 (historical document)
 ```
 
@@ -109,6 +109,12 @@ douyin-script-pro/
 - **Lazy-loading discipline**: load only one references/ module at a time and finish it before loading the next, so screenwriting rules and cinematography rules never contaminate each other; script-only sessions never touch the downstream.
 - **Rollback protocol**: when an upstream problem surfaces downstream, return to that stage and fix only the specified issue; tag versions, keep old ones, and never auto-redo downstream work.
 - **Authoritative-input confirmation**: user-uploaded scripts / character cards / asset images become authoritative only after the user explicitly says "treat these as authoritative."
+
+## Version
+
+- **v5.3 (2026-11-25)**: scoring math fixed (Dimension 1 now sums to exactly 100; standard 300 / challenge 400 dual track); model names abstracted into a capability-tier mapping table; relay return-validation checklist and single-model fallback path; spoken-word length-to-duration budget and percentage-based emotional arc; "always do" list cut from 16 to 5 non-negotiables; compliance notes for official maps and BGM licensing
+- **v5.2 (2026-09-15)**: model-relay prompt pack + semi-auto mode
+- **v5.1 (2026-09-15)**: polish model switched to Gemini 3.6 Flash
 
 ## License
 
